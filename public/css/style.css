@@ -19,6 +19,9 @@
 /**========== PAGGING PRODUCTS ==========*/
 @import url("pagging.css");
 
+/**========== Check Out==========*/
+@import url("checkout.css");
+
 /*TODO JS ACTIVE  */
 @import url("js.css");
 

@@ -1,3 +1,4 @@
+<?php $cart_info = isset($_SESSION['cart']['info']) ? $_SESSION['cart']['info'] : ''; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,8 @@
 
     <!-- CSS BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <!--========== CSS ==========-->
     <link rel="stylesheet" href="./public/css/style.css">
@@ -63,7 +66,7 @@
                 <a href="?mod=cart">
                     <i class='bx bx-cart-alt nav__link'></i>
                     <span class="quantity-product">
-                        12
+                        <?=isset($cart_info['total_num_order']) ? $cart_info['total_num_order'] : ''?>
                     </span>
                 </a>
             </div>

@@ -46,9 +46,13 @@
                                         <li>Đã bán 7,5k</li>
                                     </ul>
                                 </div>
-                                <a href="?mod=products&action=cart&id=<?=$value['id']?>" class="btn btn-primary add-cart-product"><i class='bx bx-cart-alt' ></i></a>
+                                <div class="add-now">
+                                    <a href="?mod=cart&action=add&id=<?=$value['id']?>" class="btn btn-primary add-cart-product"><i class='bx bx-cart-alt' ></i></a>
+                                    <span>Thêm vào giỏ</span>
+                                </div>
                             </div>
                         </div>
+
                     <?php } ?>
                 <?php } else if(isset($_GET['action']) && $_GET['action'] == 'search') {?>
                     <?php if($result_search == null) {?>
@@ -79,7 +83,10 @@
                                             <li>Đã bán 7,5k</li>
                                         </ul>
                                     </div>
-                                    <a href="?mod=products&action=cart&id=<?=$value['id']?>" class="btn btn-primary add-cart-product"><i class='bx bx-cart-alt' ></i></a>
+                                    <div class="add-now">
+                                        <a href="?mod=cart&action=add&id=<?=$value['id']?>" class="btn btn-primary add-cart-product"><i class='bx bx-cart-alt' ></i></a>
+                                        <span>Thêm vào giỏ</span>
+                                    </div>
                                 </div>
                             </div>
                         <?php } ?>
@@ -107,9 +114,15 @@
                                         <li>Đã bán 7,5k</li>
                                     </ul>
                                 </div>
-                                <a href="?mod=products&action=cart&id=<?=$value['id']?>" class="btn btn-primary add-cart-product"><i class='bx bx-cart-alt' ></i></a>
+                                <div class="add-now">
+                                    <a href="?mod=cart&action=addNow&id=<?=$value['id']?>" class="btn btn-primary add-cart-product">
+                                        <i class='bx bx-cart-alt'></i>
+                                    </a>
+                                    <span>Thêm vào giỏ</span>
+                                </div>
                             </div>
                         </div>
+
                     <?php } ?>
                 <?php }?>
             </div>

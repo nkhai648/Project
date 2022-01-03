@@ -1,6 +1,6 @@
 <?php get_header('products') ?>
 <main class="bd-container bd-container__detail-product">
-    <form action="" method="POST">
+    <form action="?mod=cart&controller=index&action=add" method="POST">
         <div class="main-details bd-grid">
             <div class="image-detail">
                 <img src="../../../public/img/<?=$detail_product['img']?>" alt="">
@@ -68,13 +68,13 @@
                 <div class="data-num__order">
                     <span>Số lượng:</span>
                     <div>
-                        <span class="btn-number btn number-decrement" onclick="changeNumOrder('num-order-id', -1)">-</span>
+                        <span class="btn-number btn number-decrement" onclick="changeNumOrder('num-order-<?=$detail_product['id']?>', -1)">-</span>
                         
-                        <input class="input-number" id="num-order-id" type="text" name="num-order" value="1" min="1" max="99">
+                        <input class="input-number" id="num-order-<?=$detail_product['id']?>" type="text" name="num-order" value="1" min="1" max="99">
                         
-                        <span class="btn-number btn number-increment" onclick="changeNumOrder('num-order-id', 1)">+</span>
+                        <span class="btn-number btn number-increment" onclick="changeNumOrder('num-order-<?=$detail_product['id']?>', 1)">+</span>
 
-                        <input type="text" hidden name="id" value="">
+                        <input type="text" hidden name="id" value="<?=$detail_product['id']?>">
 
                         <button type="submit" class="btn">Thêm giỏ hàng</button>
                     </div>

@@ -1,4 +1,6 @@
 // import 'boxicons';
+
+
 //! SHOW MENU
 const toggle = document.querySelector('#nav-toggle'),
 	menu = document.querySelector('#nav-menu');
@@ -7,16 +9,6 @@ toggle.onclick = () => {
 	menu.classList.toggle('show-menu');
 };
 
-//! Remove menu when active any link
-const navLink = document.querySelectorAll('.nav__link');
-
-function removeMenu() {
-	menu.classList.remove('show-menu');
-	localStorage.removeItem(0);
-	localStorage.removeItem(1);
-	localStorage.removeItem(2);
-}
-navLink.forEach((c) => c.addEventListener('click', removeMenu));
 
 //* Change background header when scroll
 function activeHeader() {
@@ -58,7 +50,7 @@ function scrollActive() {
 
 window.addEventListener('scroll', scrollActive);
 
-//* Dark/Light Theme
+// //* Dark/Light Theme
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
 const iconTheme = 'bx-sun';
@@ -89,7 +81,7 @@ themeButton.addEventListener('click', () => {
 	localStorage.setItem('selected-icon', getCurrentIcon());
 });
 
-/*==================== ACTIVE LINK MAIN MENU PRODUCTS ====================*/
+// /*==================== ACTIVE LINK MAIN MENU PRODUCTS ====================*/
 const listMainProducts = document.querySelectorAll('.main-menu__link');
 
 function removeActive() {
@@ -110,6 +102,37 @@ hearts.forEach((c) =>
 		c.classList.toggle('bxs-heart');
 	})
 );
+
+
+//! ADD NOW TO CART 
+const formAddNow = document.querySelectorAll('#form-add-now')
+const btnAddNow = document.querySelectorAll('.add-cart-product');
+// btnAddNow.forEach(c => c.addEventListener('click', function(e){
+// 	e.preventDefault()
+// 	Swal.fire({
+// 		icon: 'success',
+// 		title: 'Thêm thành công!',
+// 		showConfirmButton: false
+// 	})
+// 	setTimeout(function() {
+// 		formAddNow.forEach(c => c.submit())
+// 	}, 500)
+// }))
+
+btnAddNow.forEach(c => c.addEventListener('click', function(e){
+	e.preventDefault()
+	Swal.fire({
+		icon: 'success',
+		title: 'Thêm thành công!',
+		showConfirmButton: false
+	})
+	setTimeout(function() {
+
+		//TODO: Huỷ bỏ preventDefault theo cách này
+		window.location = c.getAttribute('href')
+	}, 1000)
+}))
+
 
 
 //! JS DECRE & INCRE QUANTITY IN DETAIL PRODUCT 
@@ -144,3 +167,41 @@ sr.reveal(
 		interval: 200,
 	}
 );
+
+// CHECK OUT PILL 
+if(window.location.href == 'http://localhost:1234/?mod=cart&action=pay') {
+	const btnCheckout = document.querySelector('#btn-checkout');
+	const formCheckout = document.querySelector('#form-pay');
+	btnCheckout.addEventListener('click', function(e){
+		e.preventDefault();
+		Swal.fire({
+			icon: 'success',
+			title: 'Thông báo!',
+			text: 'Bạn đã thanh toán thành công.',
+			showConfirmButton: false
+		})
+	
+		setTimeout(function() {
+			formCheckout.submit();
+		}, 2000)
+	}) 
+	
+}else {
+	// DESTROY CART 
+	const btnDestroy = document.querySelector('#btn-destroy-cart');
+	btnDestroy.addEventListener('click', function(e) {
+		e.preventDefault();
+		Swal.fire({
+			icon: 'warning',
+			title: 'Cảnh báo!',
+			text: 'Bạn có chắc muốn xóa tất cả sản phẩm trong giỏ hàng?',
+			confirmButtonColor: '#ee4d2d',
+			showCancelButton: true
+		}).then((result) => {
+			// btnDestroy.setAttribute('href', '?mod=cart&action=remove')
+			if (result.isConfirmed) {
+				window.location = 'http://localhost:1234/?mod=cart&action=remove'
+			}
+		})
+	})
+}
