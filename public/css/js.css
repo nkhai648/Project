@@ -1,0 +1,18 @@
+/*TODO SHOW MENU MOBILE  */
+.show-menu {
+    top: var(--header-height);
+}
+/*TODO Change boxshadow header */
+.scroll-header {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+/*TODO Active link when scroll */
+.nav__link.active {
+    color: var(--first-color);
+}
+
+/*TODO Show scroll up  */
+.scrolltop.active {
+    bottom: 1rem;
+    visibility: visible;
+}

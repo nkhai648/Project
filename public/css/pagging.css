@@ -1,0 +1,40 @@
+.pagging {
+    max-width: 1000px;
+    margin-top: 5rem;
+}
+.pagging-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.pagging-item {
+    margin: 0 .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.pagging-item a {
+    padding: .3rem .6rem;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #393939;
+    color: black;
+    font-size: var(--smaller-font-size);
+    outline: none;
+    transition: .2s;
+}
+.pagging-item a:hover {
+    background-color: var(--first-color);
+    color: white;
+    border: 1px solid var(--first-color);
+}
+.pagging-item a.active {
+    background-color: var(--first-color);
+    color: white;
+    border: 1px solid var(--first-color);
+}
+.pagging-item .prev {
+    font-size: var(--h3-font-size);
+    padding: 0 .3rem;
+}

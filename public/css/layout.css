@@ -1,0 +1,56 @@
+/* CLASSES  */
+.section {
+    padding: 4rem 0 2rem;
+}
+.section-title, .section-subtitle {
+    text-align: center;
+}
+
+.section-title {
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-3);
+}
+
+.section-subtitle {
+    display: block;
+    color: var(--first-color);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+}
+
+/* LAYOUT  */
+.bd-container {
+    max-width: 968px;
+    width: calc(100% - 2rem);
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+}
+.bd-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.l-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+}
+
+/*========== BUTTONS ==========*/
+
+.btn {
+    display: inline-block; 
+    padding: .75rem 1rem;
+    border-radius: .5rem;
+    color: #fff;
+    background-color: var(--first-color);
+    transition: .3s;
+}
+.btn:hover {
+    background-color: var(--first-color-alt);
+    color : white;
+}

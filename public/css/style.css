@@ -1,0 +1,26 @@
+/**=====  GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/**=====  VARIABLES CSS =====*/
+@import url("variables.css");
+
+/**========== RESET ==========*/
+@import url("reset.css");
+
+/**========== CLASSES - LAYOUT - BUTTON ==========*/
+@import url("layout.css");
+
+/**========== MAIN HOME ==========*/
+@import url("main_home.css");
+
+/**========== PRODUCTS ==========*/
+@import url("products.css");
+
+/**========== PAGGING PRODUCTS ==========*/
+@import url("pagging.css");
+
+/*TODO JS ACTIVE  */
+@import url("js.css");
+
+/*!========== MEDIA QUERIES ==========*/
+@import url("responsive.css");
