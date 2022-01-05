@@ -456,6 +456,9 @@
     text-align: center;
     white-space: nowrap;
     font-size: var(--small-font-size);
+}
+
+.table tbody tr td a {
     color: var(--title-color);
 }
 .table thead tr th {

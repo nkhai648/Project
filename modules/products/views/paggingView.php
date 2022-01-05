@@ -2,13 +2,13 @@
     <ul class="pagging-list">
         <?php if($current_page > 1) { ?>
             <li class="pagging-item">
-                <a class="active prev" href="?mod=products&item_per_page=<?=$item_per_page?>&current_page=<?=$current_page - 1?>"><i class='bx bx-chevron-left'></i></a>
+                <a class="active prev" href="?mod=products&action=index&item_per_page=<?=$item_per_page?>&current_page=<?=$current_page - 1?>"><i class='bx bx-chevron-left'></i></a>
             </li>
         <?php }?>
 
         <?php if($current_page > 3) {  $first_page = 1;?>
             <li class="pagging-item">
-                <a href="?mod=products&item_per_page=<?=$item_per_page?>&current_page=<?=$first_page?>"> <?=$first_page?></a>
+                <a href="?mod=products&action=index&item_per_page=<?=$item_per_page?>&current_page=<?=$first_page?>"> <?=$first_page?></a>
             </li> 
             <li class="pagging-item">
                 <span>...</span>
@@ -18,12 +18,12 @@
             <?php if($i != $current_page) { ?>
                 <?php if($i > $current_page - 2 && $i < $current_page + 2) {?>
                     <li class="pagging-item">
-                        <a href="?mod=products&item_per_page=<?=$item_per_page?>&current_page=<?=$i?>"><?=$i?></a>
+                        <a href="?mod=products&action=index&item_per_page=<?=$item_per_page?>&current_page=<?=$i?>"><?=$i?></a>
                     </li>    
                 <?php }?>
             <?php } else { ?>
                 <li class="pagging-item">
-                    <a class="active" href="?mod=products&item_per_page=<?=$item_per_page?>&current_page=<?=$i?>"><?=$i?></a>
+                    <a class="active" href="?mod=products&action=index&item_per_page=<?=$item_per_page?>&current_page=<?=$i?>"><?=$i?></a>
                 </li> 
             <?php } ?>
         <?php }?>
@@ -33,13 +33,13 @@
                 <span>...</span>
             </li>
             <li class="pagging-item">
-                <a href="?mod=products&item_per_page=<?=$item_per_page?>&current_page=<?=$last_page?>"> <?=$last_page?></a>
+                <a href="?mod=products&action=index&item_per_page=<?=$item_per_page?>&current_page=<?=$last_page?>"> <?=$last_page?></a>
             </li> 
         <?php } ?>
 
         <?php if($current_page < $total_page - 1) { ?>
             <li class="pagging-item">
-                <a class="active prev" href="?mod=products&item_per_page=<?=$item_per_page?>&current_page=<?=$current_page + 1?>"><i class='bx bx-chevron-right'></i></a>
+                <a class="active prev" href="?mod=products&action=index&item_per_page=<?=$item_per_page?>&current_page=<?=$current_page + 1?>"><i class='bx bx-chevron-right'></i></a>
             </li>
         <?php }?>
     </ul>

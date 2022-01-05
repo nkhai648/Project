@@ -47,7 +47,7 @@
                                     </ul>
                                 </div>
                                 <div class="add-now">
-                                    <a href="?mod=cart&action=add&id=<?=$value['id']?>" class="btn btn-primary add-cart-product"><i class='bx bx-cart-alt' ></i></a>
+                                    <a href="?mod=cart&action=addNow&id=<?=$value['id']?>" class="btn btn-primary add-cart-product"><i class='bx bx-cart-alt' ></i></a>
                                     <span>Thêm vào giỏ</span>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                         </ul>
                                     </div>
                                     <div class="add-now">
-                                        <a href="?mod=cart&action=add&id=<?=$value['id']?>" class="btn btn-primary add-cart-product"><i class='bx bx-cart-alt' ></i></a>
+                                        <a href="?mod=cart&action=addNow&id=<?=$value['id']?>" class="btn btn-primary add-cart-product"><i class='bx bx-cart-alt' ></i></a>
                                         <span>Thêm vào giỏ</span>
                                     </div>
                                 </div>

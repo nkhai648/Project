@@ -32,9 +32,13 @@
                                 <input type="text" hidden name="id[]" value="<?=$value['id']?>">
                             </td>
                             <td class="td-image">
-                                <img src="../../../public/img/<?=$value['img']?>" alt="">
+                                <a href="<?=$value['base_url']?>">
+                                    <img src="../../../public/img/<?=$value['img']?>" alt="">
+                                </a>
                             </td>
-                            <td><?=$value['name']?></td>
+                            <td>
+                                <a href="<?=$value['base_url']?>"><?=$value['name']?></a>
+                            </td>
                             <td><?=formatPrice($value['price'])?></td>
                             <td>
                                 <div class="data-num__order" style="justify-content: center;">
@@ -58,6 +62,11 @@
                 </tbody>
                     
                 <tfoot>
+                    <!-- <tr>
+                        <td colspan="7">
+                            <?php require("paggingCartView.php"); ?>
+                        </td>
+                    </tr> -->
                     <tr>
                         <td colspan="7">
                             <span>Tổng giá: <?=isset($info_cart['total_price']) ? formatPrice($info_cart['total_price']) : ''?></span>

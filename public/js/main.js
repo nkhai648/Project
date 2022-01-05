@@ -1,5 +1,3 @@
-// import 'boxicons';
-
 
 //! SHOW MENU
 const toggle = document.querySelector('#nav-toggle'),
@@ -8,7 +6,6 @@ const toggle = document.querySelector('#nav-toggle'),
 toggle.onclick = () => {
 	menu.classList.toggle('show-menu');
 };
-
 
 //* Change background header when scroll
 function activeHeader() {
@@ -106,18 +103,7 @@ hearts.forEach((c) =>
 
 //! ADD NOW TO CART 
 const formAddNow = document.querySelectorAll('#form-add-now')
-const btnAddNow = document.querySelectorAll('.add-cart-product');
-// btnAddNow.forEach(c => c.addEventListener('click', function(e){
-// 	e.preventDefault()
-// 	Swal.fire({
-// 		icon: 'success',
-// 		title: 'Thêm thành công!',
-// 		showConfirmButton: false
-// 	})
-// 	setTimeout(function() {
-// 		formAddNow.forEach(c => c.submit())
-// 	}, 500)
-// }))
+const btnAddNow = document.querySelectorAll('.add-cart-product')
 
 btnAddNow.forEach(c => c.addEventListener('click', function(e){
 	e.preventDefault()
@@ -127,7 +113,6 @@ btnAddNow.forEach(c => c.addEventListener('click', function(e){
 		showConfirmButton: false
 	})
 	setTimeout(function() {
-
 		//TODO: Huỷ bỏ preventDefault theo cách này
 		window.location = c.getAttribute('href')
 	}, 1000)
@@ -168,40 +153,21 @@ sr.reveal(
 	}
 );
 
-// CHECK OUT PILL 
-if(window.location.href == 'http://localhost:1234/?mod=cart&action=pay') {
-	const btnCheckout = document.querySelector('#btn-checkout');
-	const formCheckout = document.querySelector('#form-pay');
-	btnCheckout.addEventListener('click', function(e){
-		e.preventDefault();
-		Swal.fire({
-			icon: 'success',
-			title: 'Thông báo!',
-			text: 'Bạn đã thanh toán thành công.',
-			showConfirmButton: false
-		})
-	
-		setTimeout(function() {
-			formCheckout.submit();
-		}, 2000)
-	}) 
-	
-}else {
-	// DESTROY CART 
-	const btnDestroy = document.querySelector('#btn-destroy-cart');
-	btnDestroy.addEventListener('click', function(e) {
-		e.preventDefault();
-		Swal.fire({
-			icon: 'warning',
-			title: 'Cảnh báo!',
-			text: 'Bạn có chắc muốn xóa tất cả sản phẩm trong giỏ hàng?',
-			confirmButtonColor: '#ee4d2d',
-			showCancelButton: true
-		}).then((result) => {
-			// btnDestroy.setAttribute('href', '?mod=cart&action=remove')
-			if (result.isConfirmed) {
-				window.location = 'http://localhost:1234/?mod=cart&action=remove'
-			}
-		})
+
+// DESTROY CART 
+const btnDestroy = document.querySelector('#btn-destroy-cart');
+btnDestroy.addEventListener('click', function(e) {
+	e.preventDefault();
+	Swal.fire({
+		icon: 'warning',
+		title: 'Cảnh báo!',
+		text: 'Bạn có chắc muốn xóa tất cả sản phẩm trong giỏ hàng?',
+		confirmButtonColor: '#ee4d2d',
+		showCancelButton: true
+	}).then((result) => {
+		// btnDestroy.setAttribute('href', '?mod=cart&action=remove')
+		if (result.isConfirmed) {
+			window.location = 'http://localhost:1234/?mod=cart&action=remove'
+		}
 	})
-}
+})

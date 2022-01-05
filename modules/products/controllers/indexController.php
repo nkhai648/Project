@@ -63,7 +63,6 @@
             $data['name'] = $_POST['search-product'];
 
             $data['result_search'] = searchProduct($data['name']);
-            // show_array($data['result_search']);
             $data['list_regions'] = get_regions();
             load_view('index', $data);
         }

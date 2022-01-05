@@ -3,6 +3,19 @@
         load_model('index');
     }
     function indexAction() {
+        // $data['item_per_page'] = isset($_GET['item_per_page']) ? $_GET['item_per_page'] : 3;
+
+        // $data['current_page'] = isset($_GET['current_page']) ? $_GET['current_page'] : 1;
+
+        // $data['offset'] = ($data['current_page'] - 1) * $data['item_per_page'];
+
+        // $data['products'] = limitProductAtCart($data['item_per_page'], $data['offset']);
+
+        // $data['total_product'] = getNumProductByAtCart();
+
+        // $data['total_page'] = ceil($data['total_product'] / $data['item_per_page']);
+
+        // load_view('index', $data);
         load_view('index');
     }
 
@@ -51,7 +64,7 @@
                 'price' => $value['price'],
                 'quantity' => $quantity,
                 'into_money' => $value['price'] * $quantity,
-                'base_url' => "?mod=cart&action=detail&id={$value['id']}",
+                'base_url' => "?mod=products&action=detail&id={$value['id']}",
             ];
         }
 
@@ -65,7 +78,7 @@
         if(isset($_GET['id'])) {
             $id = $_GET['id'];
         }
-
+        
         $value = getProductById($id);
         $quantity = 1;
         if(isset($_SESSION['cart']['buy'][$id])) {
@@ -81,9 +94,15 @@
                 'content' => $value['content'],
                 'price' => $value['price'],
                 'quantity' => $quantity,
+                'at_cart' => $value['at_cart'],
                 'into_money' => $value['price'] * $quantity,
-                'base_url' => "?mod=cart&action=detail&id={$value['id']}",
+                'base_url' => "?mod=products&action=detail&id={$value['id']}",
             ];
+
+            $updateField = [
+                'at_cart' => 1,
+            ];
+            updateAtCart('products', $updateField, 'id = '.$id);
             $_SESSION['cart']['buy'][$id] = $result;
         }
         infoAction();
@@ -96,7 +115,6 @@
         }
         foreach($data['id'] as $key => $id){
             $quantity = $data['num-order'][$key];
-            $get_price = getProductById($id);
 
             $_SESSION['cart']['buy'][$id]['quantity'] = $quantity;
             $_SESSION['cart']['buy'][$id]['into_money'] = $_SESSION['cart']['buy'][$id]['price'] * $quantity;
@@ -109,16 +127,28 @@
         if(isset($_GET['id'])) {
             $id = $_GET['id'];
         }
+        $updateField = [
+            'at_cart' => NULL,
+        ];
+        updateAtCart('products', $updateField, 'id = '.$id);
         unset($_SESSION['cart']['buy'][$id]);
         infoAction();
         load_view('index');
     }
     function removeAction() {
         if(isset($_SESSION['cart'])) {
+            $updateField = [
+                'at_cart' => NULL,
+            ];
+            updateAtCart('products', $updateField, '1');
             session_destroy();
             header("location: ?mod=cart&action=index");
             load_view('index');
         }
         
+    }
+    function checkoutAction() {
+        header("location: ?mod=cart&action=index");
+        load_view('index');
     }
 ?>

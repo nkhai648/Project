@@ -49,6 +49,9 @@
     margin-right: 4%;
     margin-bottom: 2%;
 }
+.field-wp label span {
+    color: #ee4d2d;
+}
 .field-wp:nth-child(2n){ margin-right: 0;}
 label{ display: block;}
 #checkout-wp input[type="text"], #checkout-wp input[type="email"],#checkout-wp input[type="tel"], textarea{
@@ -74,4 +77,17 @@ textarea{ min-height: 150px;}
 
 #form-pay h3 {
     font-family: var(--body-font);
+}
+#btn-checkout {
+    border: none;
+    outline: none;
+    padding: .5rem 1rem;
+    background-color: var(--first-color);
+    color: white;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+#btn-checkout:hover {
+    background-color: var(--first-color-alt);
+    transition: .3s ease;
 }

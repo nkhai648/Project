@@ -12,25 +12,25 @@
                 </div>
                 <div class="section-detail">
                     <div class="wrap clearfix">
-                        <form action="?mod=cart&action=remove" method="POST" id="form-pay">
+                        <form action="?mod=cart&action=checkout" method="POST" id="form-pay">
                             <div id="custom-info-wp" class="fl-left">
                                 <h3 class="title">Thông tin khách hàng</h3>
                                 <div class="detail">
                                     <div class="field-wp">
-                                        <label>Họ tên</label>
-                                        <input type="text" name="fullname" id="fullname">
+                                        <label>Họ tên <span>*</span></label>
+                                        <input type="text" name="fullname" id="fullname" class="vali-inp"  required>
                                     </div>
                                     <div class="field-wp">
-                                        <label>Email</label>
-                                        <input type="email" name="email" id="email">
+                                        <label>Email <span>*</span></label>
+                                        <input type="email" name="email" id="email" class="vali-inp"  required>
                                     </div>
                                     <div class="field-wp">
-                                        <label>Địa chỉ nhận hàng</label>
-                                        <input type="text" name="address" id="address">
+                                        <label>Địa chỉ nhận hàng <span>*</span></label>
+                                        <input type="text" name="address" id="address" class="vali-inp"  required>
                                     </div>
                                     <div class="field-wp">
-                                        <label>Số điện thoại</label>
-                                        <input type="tel" name="tel" id="tel">
+                                        <label>Số điện thoại <span>*</span></label>
+                                        <input type="text" name="tel" id="tel" class="vali-inp"  required>
                                     </div>
                                     <div class="field-full-wp">
                                         <label>Ghi chú</label>
@@ -81,7 +81,10 @@
                                         </ul>
                                     </div>
                                     <div class="place-order-wp clearfix">
-                                        <button type="submit" name="checkout" id="btn-checkout">Đặt hàng</button>
+                                        <!-- <button type="submit" name="checkout" id="btn-checkout">Đặt hàng</button> -->
+
+                                        <input type="submit" value="Đặt hàng" id="btn-checkout">
+
                                     </div>
                                 </div>
                             </div>
@@ -92,5 +95,5 @@
         </div>
     </div>
 </div>
-
+<script src="../../../public/js/validator.js"></script>
 <?php get_footer(); ?>
