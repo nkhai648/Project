@@ -10,8 +10,6 @@ require CONFIGPATH . DIRECTORY_SEPARATOR . 'database.php';
 
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'config.php';
 
-require CONFIGPATH . DIRECTORY_SEPARATOR . 'email.php';
-
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'autoload.php';
 
 //FOLDER CORE DATBASE

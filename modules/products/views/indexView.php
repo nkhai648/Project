@@ -135,6 +135,4 @@
         <?php require("paggingView.php"); ?>
     <?php }?>
 </main>
-
-
 <?php get_footer() ?>

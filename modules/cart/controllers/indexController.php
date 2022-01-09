@@ -141,7 +141,8 @@
                 'at_cart' => NULL,
             ];
             updateAtCart('products', $updateField, '1');
-            session_destroy();
+            unset($_SESSION['cart']['buy']);
+            unset($_SESSION['cart']['info']);
             header("location: ?mod=cart&action=index");
             load_view('index');
         }

@@ -60,6 +60,10 @@ body {
 	margin-bottom: 25px;
 	padding-bottom: 5px;
 }
+.message-box {
+	margin-bottom: 10px;
+	color: rgb(255, 90, 24);
+}
 .field input {
 	width: 100%;
 	margin-left: 7px;

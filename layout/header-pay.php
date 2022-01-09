@@ -33,15 +33,30 @@
             <a href="?mod=home&action=index" class="nav__logo">Tasty</a>
 
             <div class="cart-user">
-                <a href="?mod=user">
-                    <i class='bx bx-user-circle nav__link'></i>
-                </a>
-                <a href="?mod=cart">
-                    <i class='bx bx-cart-alt nav__link'></i>
-                    <span class="quantity-product">
-                        <?=isset($cart_info['total_num_order']) ? $cart_info['total_num_order'] : ''?>
-                    </span>
-                </a>
+                <div class="user-box">
+                    <a href="<?=isset($_SESSION['user']) ? '' : '?mod=user&action=index'?>" id="user-icon">
+                        <?php if(isset($_SESSION['user'])) {?>
+                            <i class='bx bxs-user-detail nav__link'></i>
+                        <?php }else {?>
+                            <i class='bx bx-user-circle nav__link'></i>
+                        <?php }?>
+                    </a>
+                    <?php if(isset($_SESSION['user'])) {?>
+                        <div class="option-user">
+                            <a href="#" class="text-option">Thông tin cá nhân</a>
+                            
+                            <a href="?mod=user&action=logout" class="text-option">Đăng xuất</a>
+                        </div>
+                    <?php }?>
+                </div>
+                <?php if(isset($_SESSION['user'])) {?>
+                    <a href="?mod=cart">
+                        <i class='bx bx-cart-alt nav__link'></i>
+                        <span class="quantity-product">
+                            <?=isset($cart_info['total_num_order']) ? $cart_info['total_num_order'] : ''?>
+                        </span>
+                    </a>
+                <?php }?>
             </div>
         </nav>
     </header>

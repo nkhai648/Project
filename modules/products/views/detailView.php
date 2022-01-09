@@ -1,6 +1,6 @@
 <?php get_header('products') ?>
 <main class="bd-container bd-container__detail-product">
-    <form action="?mod=cart&controller=index&action=add" method="POST">
+    <form action="?mod=cart&controller=index&action=add" method="POST" id="form-detail">
         <div class="main-details bd-grid">
             <div class="image-detail">
                 <img src="../../../public/img/<?=$detail_product['img']?>" alt="">
@@ -76,7 +76,7 @@
 
                         <input type="text" hidden name="id" value="<?=$detail_product['id']?>">
 
-                        <button type="submit" class="btn">Thêm giỏ hàng</button>
+                        <button type="submit" class="btn" id="btn-add-cart">Thêm giỏ hàng</button>
                     </div>
                 </div>
             </div>

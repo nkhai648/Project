@@ -107,6 +107,11 @@ function load_model($name) {
 }
 
 
+function get_404() {
+    $path = LAYOUTPATH . DIRECTORY_SEPARATOR . '404.php';
+    require $path;
+}
+
 function get_header($name = '') {
     global $data;
     if(empty($name)) {

@@ -91,47 +91,6 @@ listMainProducts.forEach(c => c.addEventListener('click', function() {
 	c.classList.add('active')
 }))
 
-//! FAVORITE FOOD
-const hearts = document.querySelectorAll('.favorite-food');
-hearts.forEach((c) =>
-	c.addEventListener('click', function () {
-		c.classList.toggle('bx-heart');
-		c.classList.toggle('bxs-heart');
-	})
-);
-
-
-//! ADD NOW TO CART 
-const formAddNow = document.querySelectorAll('#form-add-now')
-const btnAddNow = document.querySelectorAll('.add-cart-product')
-
-btnAddNow.forEach(c => c.addEventListener('click', function(e){
-	e.preventDefault()
-	Swal.fire({
-		icon: 'success',
-		title: 'Thêm thành công!',
-		showConfirmButton: false
-	})
-	setTimeout(function() {
-		//TODO: Huỷ bỏ preventDefault theo cách này
-		window.location = c.getAttribute('href')
-	}, 1000)
-}))
-
-
-
-//! JS DECRE & INCRE QUANTITY IN DETAIL PRODUCT 
-function changeNumOrder(elementId, valueChange) {
-	var element = document.getElementById(elementId)
-	var min = Number(element.getAttribute('min'))
-	var max = Number(element.getAttribute('max'))
-	var value = Number(element.value)
-	value += valueChange
-	if((!min || value >= min) && (!max || value <= max)) {
-		element.value = value
-	}
-}
-
 
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
@@ -153,21 +112,114 @@ sr.reveal(
 	}
 );
 
+//! FAVORITE FOOD
+const hearts = document.querySelectorAll('.favorite-food');
+hearts.forEach((c) =>
+	c.addEventListener('click', function () {
+		c.classList.toggle('bx-heart');
+		c.classList.toggle('bxs-heart');
+	})
+);
+
+
+//! ADD NOW TO CART 
+const formAddNow = document.querySelectorAll('#form-add-now')
+const btnAddNow = document.querySelectorAll('.add-cart-product')
+const cartIcon = document.querySelector('#cart-icon');
+
+btnAddNow.forEach(c => c.addEventListener('click', function(e){
+	if(cartIcon == null) {
+		e.preventDefault();
+		Swal.fire({
+			icon: 'error',
+			title: 'Thông báo!',
+			text: 'Bạn chưa đăng nhập nên không có quyền thêm sản phẩm. Hãy đăng nhập...',
+			showCancelButton: true,
+			confirmButtonText: 'Đăng nhập',
+			confirmButtonColor: '#00c567'
+		}).then((result) => {
+			if(result.isConfirmed) {
+				window.location = 'http://localhost:1234/?mod=user'
+			}
+		})
+	}else {
+		e.preventDefault()
+		Swal.fire({
+			icon: 'success',
+			title: 'Thêm thành công!',
+			showConfirmButton: false
+		})
+		setTimeout(function() {
+			//TODO: Huỷ bỏ preventDefault theo cách này
+			window.location = c.getAttribute('href')
+		}, 1000)
+	}
+}))
+
+
+    
+const btnAtCart = document.querySelector('#btn-add-cart');
+const formDetail = document.forms['form-detail']
+if(btnAtCart) {
+	btnAtCart.addEventListener('click', function(e) {
+		if(cartIcon == null) {
+			e.preventDefault();
+			Swal.fire({
+				icon: 'error',
+				title: 'Thông báo!',
+				text: 'Bạn chưa đăng nhập nên không có quyền thêm sản phẩm. Hãy đăng nhập...',
+				showCancelButton: true,
+				confirmButtonText: 'Đăng nhập',
+				confirmButtonColor: '#00c567'
+			}).then((result) => {
+				if(result.isConfirmed) {
+					window.location = 'http://localhost:1234/?mod=user'
+				}
+			})
+		}else {
+			e.preventDefault()
+			Swal.fire({
+				icon: 'success',
+				title: 'Thêm thành công!',
+				showConfirmButton: false
+			})
+			setTimeout(function() {
+				//TODO: Huỷ bỏ preventDefault theo cách này
+				formDetail.submit();
+			}, 1000)
+		}
+	})
+}
+
+
+//! JS DECRE & INCRE QUANTITY IN DETAIL PRODUCT 
+function changeNumOrder(elementId, valueChange) {
+	var element = document.getElementById(elementId)
+	var min = Number(element.getAttribute('min'))
+	var max = Number(element.getAttribute('max'))
+	var value = Number(element.value)
+	value += valueChange
+	if((!min || value >= min) && (!max || value <= max)) {
+		element.value = value
+	}
+}
+
 
 // DESTROY CART 
 const btnDestroy = document.querySelector('#btn-destroy-cart');
-btnDestroy.addEventListener('click', function(e) {
-	e.preventDefault();
-	Swal.fire({
-		icon: 'warning',
-		title: 'Cảnh báo!',
-		text: 'Bạn có chắc muốn xóa tất cả sản phẩm trong giỏ hàng?',
-		confirmButtonColor: '#ee4d2d',
-		showCancelButton: true
-	}).then((result) => {
-		// btnDestroy.setAttribute('href', '?mod=cart&action=remove')
-		if (result.isConfirmed) {
-			window.location = 'http://localhost:1234/?mod=cart&action=remove'
-		}
-	})
-})
+if(btnDestroy) {
+	btnDestroy.addEventListener('click', function(e) {
+		e.preventDefault();
+		Swal.fire({
+			icon: 'warning',
+			title: 'Cảnh báo!',
+			text: 'Bạn có chắc muốn xóa tất cả sản phẩm trong giỏ hàng?',
+			confirmButtonColor: '#ee4d2d',
+			showCancelButton: true
+		}).then((result) => {
+			if (result.isConfirmed) {
+				window.location.href = '?mod=cart&action=remove'
+			}
+		})
+	})	
+}
