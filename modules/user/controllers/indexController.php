@@ -106,4 +106,27 @@
     function checkVerifyMailAction() {
         load_view('checkVerifyMail');
     }
+
+    function detailUserAction() {
+        $get_id_user = isset($_SESSION['user']) ? $_SESSION['user']['id_user'] : '';
+        $data['get_user'] = getProfileUser($get_id_user);
+        load_view('detailUser', $data);
+    }
+
+    function updateProfileAction() {
+        if(isset($_POST['update'])) {
+            $id = $_POST['id_user'];
+            $full_name = $_POST['full_name'];
+            $password = $_POST['password'];
+
+            $data = [
+                'full_name' => $full_name,
+                'password' => $password,
+            ];
+
+            $where = "id_user = {$id}";
+            updateProfile('users', $data, $where);
+            header("location: ?mod=user&action=detailUser");
+        }
+    }
 ?>

@@ -17,4 +17,12 @@
     function checkInvalidUser($email) {
         return db_num_rows("select * from users where email = '{$email}'");
     }
+
+    function updateProfile($table, $data, $where) {
+        return db_update($table, $data, $where);
+    }
+
+    function getProfileUser($id) {
+        return db_fetch_row("select * from users where id_user = {$id}");
+    }
 ?>

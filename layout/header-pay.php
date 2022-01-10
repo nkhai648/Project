@@ -43,7 +43,7 @@
                     </a>
                     <?php if(isset($_SESSION['user'])) {?>
                         <div class="option-user">
-                            <a href="#" class="text-option">Thông tin cá nhân</a>
+                            <a href="?mod=user&action=detailUser" class="text-option">Thông tin cá nhân</a>
                             
                             <a href="?mod=user&action=logout" class="text-option">Đăng xuất</a>
                         </div>

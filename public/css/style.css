@@ -22,8 +22,9 @@
 /**========== Check Out==========*/
 @import url("checkout.css");
 
-/**========== Sign In - Sign Up==========*/
-/* @import url("signin-signup.css"); */
+/**========== User Profile ==========*/
+@import url('user-profile.css');
+
 /*TODO JS ACTIVE  */
 @import url("js.css");
 

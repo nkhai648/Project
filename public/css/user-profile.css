@@ -1,0 +1,59 @@
+
+#user-profile {
+    padding-top: 5rem;
+}
+#user-profile h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.field:nth-of-type(5) {
+    margin-top: 16px;
+}
+.main-profile {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 5px;
+    padding: 4rem 3rem 2rem;
+    background-color: var(--body-color);
+}
+.profile-form span {
+
+}
+.profile-form input {
+    margin-bottom: 1rem;
+    border: none;
+    outline: none;
+    color: var(--title-color);
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+    border-bottom: 2px solid rgb(201, 201, 201);
+}
+.profile-form input:focus {
+    transition: .2s ease;
+    border-bottom: 2px solid var(--first-color);
+}
+.profile-form .field {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+#btn-profile {
+    margin-top: 1.5rem;
+    padding: .5rem .6rem;
+    border-radius: 4px;
+    font-size: var(--small-font-size);
+}
+#email-profile {
+    color: #a7a7a7;
+}
+.field-pass {
+    display: flex;
+    align-items: center;
+}
+.field-pass-main i {
+    font-size: 20px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+.field-pass-main i:hover {
+    color: var(--first-color);
+}
