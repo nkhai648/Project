@@ -112,6 +112,10 @@ function get_404() {
     require $path;
 }
 
+function get_access() {
+    $path = LAYOUTPATH . DIRECTORY_SEPARATOR . 'unauthorized-access.php';
+    require $path;
+}
 function get_header($name = '') {
     global $data;
     if(empty($name)) {

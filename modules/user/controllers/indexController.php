@@ -15,11 +15,8 @@
                 'token' => NULL
             ];
             updateUser('users', $dataField, "token = '{$token}'");
-            // window.location.href = '?mod=user&action=index'
             echo "<script>
-
                 window.location.href = '?mod=user&action=checkVerifyMail'
-               
             </script>";
         }
         if(isset($_POST['login'])) {
@@ -43,9 +40,7 @@
                         }
                     }
                     if($user['status'] == 0) {
-                        echo '<script>
-                            alert("Tai khoan chua duoc xac thuc");
-                        </script>'; 
+                        $data['not_verified'] = 'This account is not verified!' ;
                     }
                 }
             }else if($checkInvalidUser < 1) {

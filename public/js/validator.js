@@ -1,5 +1,4 @@
 // CHECK OUT PILL 
-if(window.location.href == 'http://localhost:1234/?mod=cart&action=pay') {
     const btnCheckout = document.querySelector('#btn-checkout');
 	const formCheckout = document.querySelector('#form-pay');
 	const nameInp = document.querySelector('#fullname');
@@ -7,7 +6,8 @@ if(window.location.href == 'http://localhost:1234/?mod=cart&action=pay') {
 	const telInp = document.querySelector('#tel');
 	const emailInp = document.querySelector('#email');
 
-    //! VALIDATOR FORM CHECKOUT
+	console.log(btnCheckout);
+    // VALIDATOR FORM CHECKOUT
 	if(btnCheckout) {
 		btnCheckout.addEventListener('click', function(e){
 			if(nameInp.value != '' && addressInp.value != '' && telInp.value != '' && emailInp.value != '') {
@@ -25,6 +25,5 @@ if(window.location.href == 'http://localhost:1234/?mod=cart&action=pay') {
 		}) 
 	}
 		
-}
 		
 				

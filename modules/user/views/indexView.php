@@ -32,6 +32,7 @@
           <div class="message-box">
             <p><?=isset($wrong) ? $wrong : '' ?></p>
             <p><?=isset($not_exist) ? $not_exist : '' ?></p>
+            <p><?=isset($not_verified) ? $not_verified : ''?></p>
           </div>
           <div class="forgot-link">
             <a href="#">Forgot password?</a>

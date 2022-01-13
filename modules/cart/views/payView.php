@@ -81,10 +81,7 @@
                                         </ul>
                                     </div>
                                     <div class="place-order-wp clearfix">
-                                        <!-- <button type="submit" name="checkout" id="btn-checkout">Đặt hàng</button> -->
-
                                         <input type="submit" value="Đặt hàng" id="btn-checkout">
-
                                     </div>
                                 </div>
                             </div>
