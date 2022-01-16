@@ -15,12 +15,13 @@
     <link rel="shortcut icon" href="../public/img/home.png" type="image/x-icon">
 
     <!-- CSS BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../libraries/Bootstrap/css/bootstrap.min.css">
 
     <!--========== BOX ICONS ==========-->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--========== SWEETALERT ==========-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.5/sweetalert2.css" integrity="sha512-fSWkjL6trYj6KvdwIga30e8V4h9dgeLxTF2q2waiwwafEXD+GXo5LmPw7jmrSDqRun9gW5KBR+DjvWD+5TVr8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!--========== CSS ==========-->
     <link rel="stylesheet" href="./public/css/style.css">

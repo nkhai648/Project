@@ -6,7 +6,7 @@
     <title>Responsive Sliding Login & Signup Forms - HTML, CSS & Javascript</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="../../../public/css/signin-signup.css">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.5/sweetalert2.css" integrity="sha512-fSWkjL6trYj6KvdwIga30e8V4h9dgeLxTF2q2waiwwafEXD+GXo5LmPw7jmrSDqRun9gW5KBR+DjvWD+5TVr8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
 
@@ -109,6 +109,8 @@
     </div>
   <?php }?>
   </body>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.5/sweetalert2.min.js" integrity="sha512-2Dcw7wGts9jXSXtjCYN76icl3cQTy0DL30YUqDkSsqtR9INe+8PaGHekF0Y59md2onO5yoTPi5ikezSLBlN6Og==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="../../../public/js/user.js"></script>
 </html>
 

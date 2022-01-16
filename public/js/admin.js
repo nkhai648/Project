@@ -17,7 +17,7 @@ window.onload = function () {
 	};
 	showMenu('nav-toggle', 'navbar', 'body');
 
-	// CONFIRM DELETE
+	// CONFIRM DELETE PRODUCT
 	const trashBtn = document.querySelectorAll('#trash-icon');
 	if (trashBtn) {
 		trashBtn.forEach((c) =>
@@ -35,6 +35,24 @@ window.onload = function () {
 				});
 			})
 		);
+	}
+
+	// CONFIRM DELETE USER
+	const deleteUser = document.querySelectorAll('#delete-user');
+	if(deleteUser) {
+		deleteUser.forEach((c) => c.addEventListener('click', function(e) {
+			e.preventDefault()
+			Swal.fire({
+				icon: 'warning',
+				title: 'Alert!',
+				text: 'Are you sure you want to delete this user?',
+				showCancelButton: true,
+			}).then((result) => {
+				if (result.isConfirmed) {
+					window.location.href = c.getAttribute('href');
+				}
+			});
+		}))
 	}
 
 	// LINK ACTIVE COLOR

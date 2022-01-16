@@ -89,23 +89,3 @@
 <?php }else {?>
     <?php header('location: ?mod=home');?>
 <?php }?>
-
-
-<script>
-// DESTROY CART 
-const btnDestroy = document.querySelector('#btn-destroy-cart');
-btnDestroy.addEventListener('click', function(e) {
-	e.preventDefault();
-	Swal.fire({
-		icon: 'warning',
-		title: 'Cảnh báo!',
-		text: 'Bạn có chắc muốn xóa tất cả sản phẩm trong giỏ hàng?',
-		confirmButtonColor: '#ee4d2d',
-		showCancelButton: true
-	}).then((result) => {
-		if (result.isConfirmed) {
-			window.location = 'http://localhost:1234/?mod=cart&action=remove'
-		}
-	})
-})
-</script>

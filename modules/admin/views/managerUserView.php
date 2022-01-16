@@ -23,7 +23,7 @@
                     <td><?=$value['status'] == 1 ? 'Verified' : 'Not verified'?></td>
                     <td><?=$value['created_at']?></td>
                     <td>
-                        <a href="?mod=admin&action=deleteUser&id=<?=$value['id_user']?>"><i class='bx bx-trash' style="color: red"></i></a>
+                        <a href="?mod=admin&action=deleteUser&id=<?=$value['id_user']?>" id="delete-user"><i class='bx bx-trash' style="color: red"></i></a>
                     </td>
                 </tr>
             <?php }?>
