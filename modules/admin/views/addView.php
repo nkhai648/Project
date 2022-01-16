@@ -2,7 +2,7 @@
 
 <main class="edit container mt-3 pb-4">
         <h2 class="text-center">Add Product</h2>
-        <form action="?mod=admin&action=addProduct" method="POST" enctype="multipart/form-data">
+        <form action="?mod=admin&action=addProduct" method="POST" enctype="multipart/form-data" id="form-add-product">
             <div class="container-file">
                 <label class="form-label">Image product:</label>
                 <div class="wrapper">
@@ -57,7 +57,7 @@
                     <option value="3">Miền Nam</option>
                 </select>
             </div>
-            <button type="submit" class="btn-edit" name="add" onclick="trimText()">Add</button>
+            <button type="submit" class="btn-edit" id="btn-add-product" name="add" onclick="trimText()">Add</button>
         </form>
     </main>
 

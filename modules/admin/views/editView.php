@@ -2,7 +2,7 @@
 <?php get_sidebar('admin')?>
     <main class="edit container mt-3 pb-4">
         <h2 class="text-center mb-4 mt-4">Edit Product</h2>
-        <form action="?mod=admin&action=update" method="POST" enctype="multipart/form-data">
+        <form action="?mod=admin&action=update" method="POST" enctype="multipart/form-data" id="form-edit-product">
             <div class="container-file">
                 <label class="form-label">Image product:</label>
                 <div class="wrapper">
@@ -58,7 +58,7 @@
                 </select>
             </div>
             <input type="text" hidden name="id" value="<?=$get_product['id']?>">
-            <button type="submit" class="btn-edit" name="save-edit" onclick="trimText()">Save</button>
+            <button type="submit" class="btn-edit" id="btn-edit-product" name="save-edit" onclick="trimText()">Save</button>
         </form>
     </main>
 

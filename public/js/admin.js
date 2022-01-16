@@ -37,6 +37,42 @@ window.onload = function () {
 		);
 	}
 
+	// SWEETALERT ADD PRODUCT 
+	const formAddProduct = document.querySelector('#form-add-product')
+	const btnAddProduct = document.querySelector('#btn-add-product')
+	if(formAddProduct && btnAddProduct) {
+		btnAddProduct.addEventListener('click', function(e) {
+			e.preventDefault()
+			Swal.fire({
+				icon: 'success',
+				title: 'Alert!',
+				text: 'You was add successfully one product!',
+				showConfirmButton: false
+			})
+			setTimeout(function() {
+				formAddProduct.submit();
+			},2000)
+		})
+	}
+
+	// SWEETALERT UPDATE PRODUCT 
+	const formEditProduct = document.querySelector('#form-edit-product')
+	const btnEditProduct = document.querySelector('#btn-edit-product')
+	if(formEditProduct && btnEditProduct) {
+		btnEditProduct.addEventListener('click', function(e) {
+			e.preventDefault();
+			Swal.fire({
+				icon: 'success',
+				title: 'Alert!',
+				text: 'Update successfully!',
+				showConfirmButton: false,
+			})
+			setTimeout(function() {
+				formEditProduct.submit();
+			},2000)
+		})
+	}
+
 	// CONFIRM DELETE USER
 	const deleteUser = document.querySelectorAll('#delete-user');
 	if(deleteUser) {

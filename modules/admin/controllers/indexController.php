@@ -25,7 +25,7 @@
         }
     }
     function updateAction() {
-        if(isset($_POST['save-edit'])) {
+        // if(isset($_POST['save-edit'])) {
             $id = isset($_POST['id']) ? $_POST['id'] : '';
             $name = isset($_POST['name-product']) ? $_POST['name-product'] : '';
             $img = isset($_POST['img-product']) ? $_POST['img-product'] : '';
@@ -77,7 +77,7 @@
             $where = 'id = '.$id;
             db_update('products', $data, $where);
             header("location: ?mod=admin&action=edit&id={$id}");
-        }
+        // }
     }
 
     function addAction() {
@@ -85,7 +85,7 @@
     }
 
     function addProductAction() {
-        if(isset($_POST['add'])) {
+        // if(isset($_POST['add'])) {
             $name = isset($_POST['name-product']) ? $_POST['name-product'] : '';
             $img = isset($_POST['img-product']) ? $_POST['img-product'] : '';
             $price = isset($_POST['price-product']) ? $_POST['price-product'] : '';
@@ -134,7 +134,7 @@
             ];
             db_insert('products', $data);
             header("location: ?mod=admin&action=index");
-        }
+        // }
     } 
 
     function searchAction() {
