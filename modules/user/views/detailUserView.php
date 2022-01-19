@@ -1,10 +1,29 @@
 <?php get_header(); ?>
  <main class="bd-container section" id="user-profile">
     <div class="main-profile">
-        <h2>Hồ sơ người dùng</h2>
-        <form action="?mod=user&action=updateProfile" method="POST" class="profile-form">
+        <h2>Profile User</h2>
+        <form action="?mod=user&action=updateProfile" method="POST" class="profile-form" enctype="multipart/form-data">
+            <div class="container-file">
+                <div class="wrapper">
+                    <div class="image">
+                        <img id="imgHere" src="../../../public/upload/<?=$get_user['img']?>">
+                        <input type="text" hidden name="img-user" id="name-img-product" value="<?=$get_user['img']?>">
+                    </div>
+                    <div class="content">
+                        <div class="icon">
+                            <i class='bx bxs-cloud-upload'></i>
+                        </div>
+                        
+                        <div class="text">
+                            No file chosen, yet!
+                        </div>
+                    </div>
+                </div>
+                <a onclick="defaultBtnActive()" id="custom-btn">Choose a avatar</a>
+                <input id="default-btn" type="file" name="file" hidden>
+            </div>
             <div class="field">
-                <span>Họ và tên:</span>
+                <span>Full name:</span>
                 <input type="text" value="<?=$get_user['full_name']?>" name="full_name" required>
             </div>
             <div class="field">
@@ -12,18 +31,18 @@
                 <input type="email" disabled value="<?=$get_user['email']?>" id="email-profile">
             </div>
             <div class="field field-pass-main">
-                <span>Mật khẩu:</span>
+                <span>Password:</span>
                 <div class="field-pass">
                     <input type="password" value="<?=$get_user['password']?>" name="password" id="pass-profile" required>
                     <i class='bx bx-show'></i>
                 </div>
             </div>
             <div class="field">
-                <span>Trạng thái: </span>
-                <span>Đã xác thực.</span>
+                <span>State: </span>
+                <span>Verifired.</span>
             </div>
             <div class="field">
-                <span>Đăng ký lúc: </span>
+                <span>Sign up in: </span>
                 <span><?=$get_user['created_at']?>.</span>
             </div>
             <input type="text" hidden name="id_user" value="<?=$get_user['id_user']?>">

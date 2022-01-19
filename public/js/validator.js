@@ -14,8 +14,8 @@
 				e.preventDefault();
 				Swal.fire({
 					icon: 'success',
-					title: 'Thông báo!',
-					text: 'Bạn đã thanh toán thành công.',
+					title: 'Alert!',
+					text: 'You has paying successfully!',
 					showConfirmButton: false
 				})
 				setTimeout(function() {

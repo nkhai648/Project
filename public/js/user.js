@@ -21,8 +21,8 @@
       if(inpMail.value != '' && inpName.value != '' && inpPass.value != '' && inpConfirmPass.value != '' && inpConfirmPass.value == inpPass.value ) {
         Swal.fire({
             icon: 'success',
-            title: 'Thông báo!',
-            text: 'Mã xác nhận đã được gửi tới mail của bạn. Hãy xác thực mail để tiếp tục đăng nhập!',
+            title: 'Alert!',
+            text: 'Verification code has been sent to your email. Please verify your email to continue logging in!',
             showConfirmButton: false
         })
         setTimeout(function() {

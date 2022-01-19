@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <img src="../../../public/img/verify-email.jpg" alt="">
-        <h2>Việc xác thực email của bạn đã hoàn tất. Click <a href="?mod=user&action=index">vào đây</a> để tiếp tục đăng nhập... </h2>
+        <h2>Your email verification is complete. Click <a href="?mod=user&action=index">here</a> to continue logging in... </h2>
     </div>
 </body>
 </html>

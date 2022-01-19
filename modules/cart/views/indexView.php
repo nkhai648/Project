@@ -8,30 +8,27 @@
         <?php if(empty($list_cart)) {?>
             <div class="empty-cart">
                 <img src="../../../public/img/empty_cart.jpg" alt="" class="img-empty">
-                <span>Chưa có sản phẩm nào trong giỏ hàng! Nhấn <a href="?mod=products&action=index">vào đây</a> để xem sản phẩm.</span>
+                <span>There are no products in the cart! Click <a href="?mod=products&action=index">here</a> to view the product.</span>
             </div>
         <?php }else {?>
-            <h3>Giỏ hàng</h3>
+            <h3>Cart</h3>
             <form action="?mod=cart&action=update" method="POST">
                 <table class="table">
                     <thead>
                         <tr class="table-secondary">
-                            <th scope="col">Mã sản phẩm</th>
-                            <th scope="col">Ảnh sản phẩm</th>
-                            <th scope="col">Tên sản phẩm</th>
-                            <th scope="col">Giá sản phẩm</th>
-                            <th scope="col">Số lượng</th>
-                            <th scope="col">Thành tiền</th>
+                            <!-- <th scope="col">Mã sản phẩm</th> -->
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Into money</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach($list_cart as $value) {?>
                             <tr class="justify-content-center">
-                                <td>
-                                    <?=$value['code']?>
-                                    <input type="text" hidden name="id[]" value="<?=$value['id']?>">
-                                </td>
+                                <input type="text" hidden name="id[]" value="<?=$value['id']?>">
                                 <td class="td-image">
                                     <a href="<?=$value['base_url']?>">
                                         <img src="../../../public/img/<?=$value['img']?>" alt="">
@@ -70,14 +67,14 @@
                         </tr> -->
                         <tr>
                             <td colspan="7">
-                                <span>Tổng giá: <?=isset($info_cart['total_price']) ? formatPrice($info_cart['total_price']) : ''?></span>
+                                <span>Total price: <span class="into-price"><?=isset($info_cart['total_price']) ? formatPrice($info_cart['total_price']) : ''?></span></span>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="7">
-                                <a href="" id="btn-destroy-cart" class="btn btn-delete-cart">Xóa giỏ hàng</a>
-                                <button class="btn" type="submit">Cập nhật giỏ hàng</button>
-                                <a href="?mod=cart&action=pay" class="btn">Thanh toán</a>
+                                <a href="" id="btn-destroy-cart" class="btn btn-delete-cart">Delete cart</a>
+                                <button class="btn" type="submit">Update cart</button>
+                                <a href="?mod=cart&action=pay" class="btn">Payment</a>
                             </td>
                         </tr>
                     </tfoot>

@@ -1,4 +1,3 @@
-
 //! SHOW MENU
 const toggle = document.querySelector('#nav-toggle'),
 	menu = document.querySelector('#nav-menu');
@@ -47,8 +46,9 @@ function scrollActive() {
 
 window.addEventListener('scroll', scrollActive);
 
-// //* Dark/Light Theme
+//* Dark/Light Theme
 const themeButton = document.getElementById('theme-button');
+const imgLogo = document.querySelector('.nav__logo img');
 const darkTheme = 'dark-theme';
 const iconTheme = 'bx-sun';
 
@@ -62,35 +62,35 @@ const getCurrentIcon = () =>
 	themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun';
 
 if (selectedTheme) {
-	document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](
-		darkTheme
-	);
-	themeButton.classList[selectedTheme === 'bx-moon' ? 'add' : 'remove'](
-		iconTheme
-	);
+	document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+	themeButton.classList[selectedTheme === 'bx-moon' ? 'add' : 'remove'](iconTheme);
 }
 
 themeButton.addEventListener('click', () => {
 	document.body.classList.toggle(darkTheme);
 	themeButton.classList.toggle(iconTheme);
+	
+	if(document.body.classList.contains('dark-theme')) {
+		imgLogo.src = '../public/img/logo2.png'
+	}else {
+		imgLogo.src = '../public/img/logo.png'
+	}
 
 	localStorage.setItem('selected-theme', getCurrentTheme());
 	localStorage.setItem('selected-icon', getCurrentIcon());
 });
 
-// /*==================== ACTIVE LINK MAIN MENU PRODUCTS ====================*/
-const listMainProducts = document.querySelectorAll('.main-menu__link');
-
-function removeActive() {
-	listMainProducts.forEach(c => c.addEventListener('click', function() {
-		c.classList.remove('active')
-	}))
+if(localStorage.getItem('selected-theme') === 'dark') {
+	imgLogo.src = '../public/img/logo2.png'
+} else {
+	imgLogo.src = '../public/img/logo.png'
 }
-listMainProducts.forEach(c => c.addEventListener('click', function() {
-	removeActive()
-	c.classList.add('active')
-}))
 
+/*==================== REMOVE ACTIVE LINK MENU IN DEVICE MOBILE ====================*/
+const navLink = document.querySelectorAll('.nav__link')
+navLink.forEach(c => c.addEventListener('click', function() {
+	menu.classList.remove('show-menu')
+}))
 
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
@@ -121,105 +121,137 @@ hearts.forEach((c) =>
 	})
 );
 
-
-//! ADD NOW TO CART 
-const formAddNow = document.querySelectorAll('#form-add-now')
-const btnAddNow = document.querySelectorAll('.add-cart-product')
+//! ADD NOW TO CART
+const formAddNow = document.querySelectorAll('#form-add-now');
+const btnAddNow = document.querySelectorAll('.add-cart-product');
 const cartIcon = document.querySelector('#cart-icon');
 
-btnAddNow.forEach(c => c.addEventListener('click', function(e){
-	if(cartIcon == null) {
-		e.preventDefault();
-		Swal.fire({
-			icon: 'error',
-			title: 'Thông báo!',
-			text: 'Bạn chưa đăng nhập nên không có quyền thêm sản phẩm. Hãy đăng nhập...',
-			showCancelButton: true,
-			confirmButtonText: 'Đăng nhập',
-			confirmButtonColor: '#00c567'
-		}).then((result) => {
-			if(result.isConfirmed) {
-				window.location = 'http://localhost:1234/?mod=user'
-			}
-		})
-	}else {
-		e.preventDefault()
-		Swal.fire({
-			icon: 'success',
-			title: 'Thêm thành công!',
-			showConfirmButton: false
-		})
-		setTimeout(function() {
-			//TODO: Huỷ bỏ preventDefault theo cách này
-			window.location = c.getAttribute('href')
-		}, 1000)
-	}
-}))
-
-
-    
-const btnAtCart = document.querySelector('#btn-add-cart');
-const formDetail = document.forms['form-detail']
-if(btnAtCart) {
-	btnAtCart.addEventListener('click', function(e) {
-		if(cartIcon == null) {
+btnAddNow.forEach((c) =>
+	c.addEventListener('click', function (e) {
+		if (cartIcon == null) {
 			e.preventDefault();
 			Swal.fire({
 				icon: 'error',
-				title: 'Thông báo!',
-				text: 'Bạn chưa đăng nhập nên không có quyền thêm sản phẩm. Hãy đăng nhập...',
+				title: 'Alert!',
+				text: 'You are not logged in, so you do not have permission to add products. Please login...',
 				showCancelButton: true,
-				confirmButtonText: 'Đăng nhập',
-				confirmButtonColor: '#00c567'
+				confirmButtonText: 'Loggin',
+				confirmButtonColor: '#00c567',
 			}).then((result) => {
-				if(result.isConfirmed) {
-					window.location = 'http://localhost:1234/?mod=user'
+				if (result.isConfirmed) {
+					window.location = 'http://localhost:5000/?mod=user&action=index';
 				}
-			})
-		}else {
-			e.preventDefault()
+			});
+		} else {
+			e.preventDefault();
 			Swal.fire({
 				icon: 'success',
-				title: 'Thêm thành công!',
-				showConfirmButton: false
-			})
-			setTimeout(function() {
+				title: 'Add successfully!',
+				showConfirmButton: false,
+			});
+			setTimeout(function () {
 				//TODO: Huỷ bỏ preventDefault theo cách này
-				formDetail.submit();
-			}, 1000)
+				window.location = c.getAttribute('href');
+			}, 1000);
 		}
 	})
+);
+
+const btnAtCart = document.querySelector('#btn-add-cart');
+const formDetail = document.forms['form-detail'];
+if (btnAtCart) {
+	btnAtCart.addEventListener('click', function (e) {
+		if (cartIcon == null) {
+			e.preventDefault();
+			Swal.fire({
+				icon: 'error',
+				title: 'Alert!',
+				text: 'You are not logged in, so you do not have permission to add products. Please login...',
+				showCancelButton: true,
+				confirmButtonText: 'Đăng nhập',
+				confirmButtonColor: '#00c567',
+			}).then((result) => {
+				if (result.isConfirmed) {
+					window.location = 'http://localhost:5000/?mod=user&action=index';
+				}
+			});
+		} else {
+			e.preventDefault();
+			Swal.fire({
+				icon: 'success',
+				title: 'Add successfully!',
+				showConfirmButton: false,
+			});
+			setTimeout(function () {
+				//TODO: Huỷ bỏ preventDefault theo cách này
+				formDetail.submit();
+			}, 1000);
+		}
+	});
 }
 
-
-//! JS DECRE & INCRE QUANTITY IN DETAIL PRODUCT 
+//! JS DECRE & INCRE QUANTITY IN DETAIL PRODUCT
 function changeNumOrder(elementId, valueChange) {
-	var element = document.getElementById(elementId)
-	var min = Number(element.getAttribute('min'))
-	var max = Number(element.getAttribute('max'))
-	var value = Number(element.value)
-	value += valueChange
-	if((!min || value >= min) && (!max || value <= max)) {
-		element.value = value
+	var element = document.getElementById(elementId);
+	var min = Number(element.getAttribute('min'));
+	var max = Number(element.getAttribute('max'));
+	var value = Number(element.value);
+	value += valueChange;
+	if ((!min || value >= min) && (!max || value <= max)) {
+		element.value = value;
 	}
 }
 
-
-// DESTROY CART 
+// DESTROY CART
 const btnDestroy = document.querySelector('#btn-destroy-cart');
-if(btnDestroy) {
-	btnDestroy.addEventListener('click', function(e) {
+if (btnDestroy) {
+	btnDestroy.addEventListener('click', function (e) {
 		e.preventDefault();
 		Swal.fire({
 			icon: 'warning',
-			title: 'Cảnh báo!',
-			text: 'Bạn có chắc muốn xóa tất cả sản phẩm trong giỏ hàng?',
+			title: 'Warning!',
+			text: 'Are you sure you want to delete all products in your cart?',
 			confirmButtonColor: '#ee4d2d',
-			showCancelButton: true
+			showCancelButton: true,
 		}).then((result) => {
 			if (result.isConfirmed) {
-				window.location.href = '?mod=cart&action=remove'
+				window.location.href = '?mod=cart&action=remove';
 			}
-		})
-	})	
+		});
+	});
+}
+
+const wrapper = document.querySelector('.wrapper');
+const defaultBtn = document.querySelector('#default-btn');
+const fileName = document.querySelector('.file-name');
+const img = document.getElementById('imgHere');
+const customBtn = document.querySelector('#custom-btn');
+const nameImage = document.querySelector('#name-img-product');
+let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+
+if (defaultBtn) {
+	function defaultBtnActive() {
+		defaultBtn.click();
+	}
+	defaultBtn.addEventListener('change', function () {
+		const file = this.files[0];
+		const getNameFile = this.value.split(/(\\|\/)/g).pop();
+		console.log(nameImage);
+		if (file) {
+			const reader = new FileReader();
+			// console.log(reader);
+			reader.onload = function () {
+				const result = reader.result;
+				// console.log(result);
+				img.src = result;
+				nameImage.value = getNameFile;
+				wrapper.classList.add('active');
+			};
+			reader.readAsDataURL(file);
+		}
+		if (this.value) {
+			let valueStore = this.value.match(regExp);
+			fileName.textContent = valueStore;
+		}
+	});
 }

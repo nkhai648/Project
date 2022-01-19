@@ -76,7 +76,7 @@
                         $data['token'] = randomToken();
                         
                         $mailHeader = 'Please verify your email...';
-                        $mailBody = "<a href='http://localhost:1234/?mod=user&action=login&token={$data['token']}'>Click here</a>";
+                        $mailBody = "<a href='http://localhost:5000/?mod=user&action=login&token={$data['token']}'>Click here</a>";
                         $mailer = mailer($data['email'], $mailHeader, $mailBody);
                         insertUser('users', $data);
                         header('location: ?mod=user&action=index');
@@ -112,10 +112,41 @@
         if(isset($_POST['update'])) {
             $id = $_POST['id_user'];
             $full_name = $_POST['full_name'];
+            $img = isset($_POST['img-user']) ? $_POST['img-user'] : '';
             $password = $_POST['password'];
+
+            if(isset($_FILES['file'])) {
+                $fileName = $_FILES['file']['name'];
+                $fileTmp = $_FILES['file']['tmp_name'];
+                $fileSize = $_FILES['file']['size'];
+                $fileError = $_FILES['file']['error'];
+
+                $fileExt = explode('.', $fileName);
+                $getTypeFile = strtolower(end($fileExt));
+                $arrType = array('jpg', 'png', 'jpeg');
+
+                if(in_array($getTypeFile, $arrType)) {
+                    if($fileError === 0) {
+                        if($fileSize < 1000000) {
+                            $target = "public/upload/".basename($fileName);
+                            move_uploaded_file($fileTmp, $target);
+                        }else {
+                            echo 'Your file is so big!';
+                            exit();
+                        }
+                    }else {
+                        echo 'Image error!';
+                        exit();
+                    }
+                }else {
+                    echo 'File do not exist! Please try agian!';
+                    exit();
+                }
+            }
 
             $data = [
                 'full_name' => $full_name,
+                'img' => $img,
                 'password' => $password,
             ];
 

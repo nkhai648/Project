@@ -327,7 +327,7 @@
     <!--===== MENU =======-->
     <section class="menu section bd-container" id="menu">
         <span class="section-subtitle">Special</span>
-        <h2 class="section-title">Menu of the week</h2>
+        <h2 class="section-title">Menu coming soon</h2>
 
         <div class="menu__container bd-grid">
             <div class="menu__content">
@@ -335,9 +335,7 @@
                 <h3 class="menu__name">Barbecue salad</h3>
                 <span class="menu__detail">Delicious dish</span>
                 <span class="menu__preci">$22.00</span>
-                <a href="#" class="btn menu__btn">
-                    <i class='bx bx-cart-alt'></i>
-                </a>
+                <!-- <a href="#" class="btn menu__btn"><i class='bx bx-cart-alt'></i></a> -->
             </div>
 
             <div class="menu__content">
@@ -345,7 +343,7 @@
                 <h3 class="menu__name">Salad with fish</h3>
                 <span class="menu__detail">Delicious dish</span>
                 <span class="menu__preci">$12.00</span>
-                <a href="#" class="btn menu__btn"><i class='bx bx-cart-alt'></i></a>
+                <!-- <a href="#" class="btn menu__btn"><i class='bx bx-cart-alt'></i></a> -->
             </div>
             
             <div class="menu__content">
@@ -353,7 +351,7 @@
                 <h3 class="menu__name">Spinach salad</h3>
                 <span class="menu__detail">Delicious dish</span>
                 <span class="menu__preci">$9.50</span>
-                <a href="#" class="btn menu__btn"><i class='bx bx-cart-alt'></i></a>
+                <!-- <a href="#" class="btn menu__btn"><i class='bx bx-cart-alt'></i></a> -->
             </div>
         </div>
     </section>

@@ -21,6 +21,18 @@
         transition: .4s;
         z-index: var(--z-tooltip);
     }
+    .nav__logo {
+        order: 2;
+    }
+    .nav__logo img {
+        width: 25px !important;
+    }
+    .nav__toggle {
+        order: 1; 
+    }
+    .cart-user {
+        order: 3;
+    }
 }
 
 .nav__item {
@@ -38,6 +50,9 @@
     color: var(--first-color);
 }
 
+.nav__logo img {
+    width: 35px;
+}
 .nav__link:hover {
     color: var(--first-color);
 }
@@ -79,8 +94,8 @@
 }
 .user-box .option-user{
     position: absolute;
-    bottom: -5rem;
-    left:-108px;
+    bottom: -5.1rem;
+    left:-68px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 6px;
     opacity: 0;

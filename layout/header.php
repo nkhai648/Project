@@ -37,7 +37,9 @@
     <!--========== HEADER ==========-->
     <header class="l-header" id="header">
         <nav class="nav bd-container">
-            <a href="#" class="nav__logo">Tasty</a>
+            <a href="#" class="nav__logo">
+                <img src="../public/img/logo.png" alt="">
+            </a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -78,9 +80,9 @@
                     </a>
                     <?php if(isset($_SESSION['user'])) {?>
                         <div class="option-user">
-                            <a href="?mod=user&action=detailUser" class="text-option">Thông tin cá nhân</a>
+                            <a href="?mod=user&action=detailUser" class="text-option">Profile user</a>
                             
-                            <a href="?mod=user&action=logout" class="text-option">Đăng xuất</a>
+                            <a href="?mod=user&action=logout" class="text-option">Log out</a>
                         </div>
                     <?php }?>
                 </div>

@@ -31,7 +31,7 @@
 <body>
     <div class="main">
         <img src="../public/img/error-access.jpg" alt="">
-        <h3>Bạn đang truy cập trái phép. Hãy dừng ngay hành động này lại!</h3>
+        <h3>You are accessing unauthorized access. Stop this action now!</h3>
     </div>
 </body>
 </html>

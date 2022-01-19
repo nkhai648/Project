@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <img src="../public/img/404.jpg" alt="">
-        <h2>Đường dẫn không tồn tại! Vui lòng thử lại.</h2>
+        <h2>The path does not exist! Please try again.</h2>
     </div>
 </body>
 </html>

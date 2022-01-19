@@ -7,7 +7,7 @@
 
                 <div class="share-socials">
                     <ul>
-                        <li>Chia sẻ:</li>
+                        <li>Share:</li>
                         <li><i class='bx bxl-facebook-circle'></i></li>
                         <li><i class='bx bxl-messenger'></i></li>
                         <li><i class='bx bxl-pinterest' ></i></li>
@@ -16,7 +16,7 @@
 
                     <div class="add-love">
                         <i class='bx bx-heart favorite-food' ></i>
-                        <span>Đã thích (19,3k)</span>
+                        <span>Liked (19,3k)</span>
                     </div>
                 </div>
             </div>
@@ -32,41 +32,41 @@
                         <i class='bx bxs-star'></i>
                     </li>
                     <li class="rate-evaluate">
-                        <label>17,7K </label><span> Đánh giá</span>
+                        <label>17,7K </label><span> Evaluate</span>
                     </li>
                     <li class="rate-sell">
-                        <label>40,2K <span>Đá bán</span></label>
+                        <label>40,2K <span>Sold</span></label>
                     </li>
                 </ul>
                 <span class="data-price"><?=formatPrice($detail_product['price'])?></span>
                 <div class="voucher">
-                    <label>Mã giảm giá của shop</label>
+                    <label>Voucher</label>
                     <ul>
-                        <li>Giảm ₫5K</li>
-                        <li>Giảm ₫5K</li>
-                        <li>Giảm ₫5K</li>
-                        <li>Giảm ₫5K</li>
+                        <li>Discount ₫5K</li>
+                        <li>Discount ₫5K</li>
+                        <li>Discount ₫5K</li>
+                        <li>Discount ₫5K</li>
                     </ul>
                 </div>
 
                 <div class="data-deal">
-                    <label>Deal sốc</label>
-                    <span>Mua kèm deal sốc</span>
+                    <label>Deal</label>
+                    <span>Buy with shock deal</span>
                 </div>
 
                 <div class="data-ship">
-                    <label>Vận chuyển</label>
+                    <label>Ship</label>
                     <ul>
                         <li>
                             <img src="../../../public/img/ship.png" alt="">
-                            Miễn phí vận chuyển
+                            Free ship
                         </li>
-                        <li>Miên phí vận chuyển cho đơn hàng trên ₫50.000</li>
+                        <li>Free shipping for orders over ₫50.000</li>
                     </ul>
                 </div>
 
                 <div class="data-num__order">
-                    <span>Số lượng:</span>
+                    <span>Quantity:</span>
                     <div>
                         <span class="btn-number btn number-decrement" onclick="changeNumOrder('num-order-<?=$detail_product['id']?>', -1)">-</span>
                         
@@ -76,7 +76,7 @@
 
                         <input type="text" hidden name="id" value="<?=$detail_product['id']?>">
 
-                        <button type="submit" class="btn" id="btn-add-cart">Thêm giỏ hàng</button>
+                        <button type="submit" class="btn" id="btn-add-cart">Add to cart</button>
                     </div>
                 </div>
             </div>
@@ -85,12 +85,12 @@
 
     <div class="data-text">
         <div class="data-desciption">
-            <span>mô tả sản phẩm</span>
+            <span>product description</span>
             <p><?=$detail_product['des']?></p>
         </div>
 
         <div class="data-highlight">
-            <span>Chi tiết sản phẩm</span>
+            <span>product detail</span>
             <p><?=$detail_product['content']?></p>
         </div>
     </div>

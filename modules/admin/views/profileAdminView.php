@@ -8,15 +8,6 @@
                     <input type="text" hidden name="img-admin" id="name-img-product" value="<?=$get_admin['img']?>">
                 </div>
 
-                <div class="content">
-                    <div class="icon">
-                        <i class='bx bxs-cloud-upload'></i>
-                    </div>
-                    
-                    <div class="text">
-                        No file chosen, yet!
-                    </div>
-                </div>
                 <div class="file-name">
                     File name here
                 </div>

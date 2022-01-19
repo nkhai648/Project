@@ -15,9 +15,6 @@
     padding: 4rem 3rem 2rem;
     background-color: var(--body-color);
 }
-.profile-form span {
-
-}
 .profile-form input {
     margin-bottom: 1rem;
     border: none;
@@ -57,3 +54,92 @@
 .field-pass-main i:hover {
     color: var(--first-color);
 }
+
+.container-file {
+    max-width:180px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.wrapper {
+    position: relative;
+    height: 180px;
+    width: 100%;
+    border-radius: 50%;
+    border: 2px dashed #c2cdda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .wrapper.active {
+    border:none;
+  }
+  .wrapper .image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrapper .content {
+    text-align: center;
+  }
+  .wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .wrapper .icon {
+    font-size: 50px;
+    color: #069c54;
+  }
+  .wrapper .text {
+    font-size: 15px;
+    font-weight:500;
+    color: #5b5b7b;
+    margin-top: -15px;
+  }
+  .wrapper #cancel-btn i {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: #5b5b7b;
+    cursor: pointer;
+  }
+  
+  .wrapper .file-name {
+    position: absolute;
+    bottom: 0;
+    background: rgba(245, 166, 35, 50%);
+    padding: 8px 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .wrapper.active:hover .file-name {
+    opacity: 1;
+    visibility: visible;
+  }
+  .container-file #custom-btn {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    background: #069c54;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
