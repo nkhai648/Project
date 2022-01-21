@@ -75,14 +75,26 @@
 
                         $data['token'] = randomToken();
                         
-                        $mailHeader = 'Please verify your email...';
-                        $mailBody = "<a href='http://localhost:5000/?mod=user&action=login&token={$data['token']}'>Click here</a>";
-                        $mailer = mailer($data['email'], $mailHeader, $mailBody);
-                        insertUser('users', $data);
-                        header('location: ?mod=user&action=index');
+                        $mailContent = [
+                            'subject' => 'Tasty Food',
+                            'body' => "<a href='http://localhost:5000/?mod=user&action=login&token={$data['token']}'>Click here</a>",
+                            'altbody' => 'Hello guy!'
+                        ];
+
+                        $verify_mail = new VerifyEmail();
+                        $verify_mail->setStreamTimeoutWait(0);
+                        if($verify_mail->check($data['email'])){
+                            objMailer::setMail($data['email'], $mailContent);
+                            objMailer::toSendMail();
+                            insertUser('users', $data);
+                            header('location: ?mod=user&action=mailSended');
+                        }else {
+                            $data['verify_email'] = 'This email account does not exist!';
+                        }
                     }
+
                     if($checkUserInvalid > 0) {
-                        $data['invalid_user'] = 'Email already exists!';
+                        $data['invalid_user'] = 'Email already exists in database!';
                     }
                 }else {
                     $data['error_pass'] = 'Password incorrect!';
@@ -100,6 +112,10 @@
 
     function checkVerifyMailAction() {
         load_view('checkVerifyMail');
+    }
+
+    function mailSendedAction() {
+        load_view('mailSended');
     }
 
     function detailUserAction() {

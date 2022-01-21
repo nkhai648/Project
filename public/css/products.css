@@ -585,7 +585,8 @@
         font-size: var(--smaller-font-size);
     }
     .btn {
-        padding: .5rem;
+        padding: .3rem .5rem;
+        font-size: 14px;
     }
 }
 
@@ -609,7 +610,7 @@
         font-size: var(--small-font-size);
     }
     .btn {
-        padding: .65rem;
+        padding: .3rem .5rem;
     }
 }
 @media screen and (min-width: 576px) {

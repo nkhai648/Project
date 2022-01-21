@@ -4,7 +4,7 @@
         <div class="mb-2 container-file container-profile-admin">
             <div class="wrapper wrapper-profile">
                 <div class="image">
-                    <img id="imgHere" src="../../../public/img/<?=$get_admin['img']?>">
+                    <img id="imgHere" src="../../../public/upload/<?=$get_admin['img']?>">
                     <input type="text" hidden name="img-admin" id="name-img-product" value="<?=$get_admin['img']?>">
                 </div>
 

@@ -91,3 +91,51 @@ textarea{ min-height: 150px;}
     background-color: var(--first-color-alt);
     transition: .3s ease;
 }
+.pay-title {
+    color: #069c54;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+#custom-info-wp .title,
+#order-review-wp .title {
+    font-weight: 600;
+    font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+    #form-pay {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    #custom-info-wp,
+    #order-review-wp {
+        width: 100%;
+    }
+    #custom-info-wp {
+        margin-bottom: 2rem;
+        padding-right: 0;
+    }
+    .title {
+        font-size: 19px;
+        font-weight: bold !important;
+    }
+    .pay-title {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 478px) {
+    .detail {
+        display: flex;
+        flex-direction: column;
+    }
+    .field-wp {
+        width: 100%;
+        margin-right: 0;
+    }
+    .title {
+        font-size: 17px;
+        font-weight: bold !important;
+    }
+    textarea {
+        min-height: 110px ;
+    }
+}

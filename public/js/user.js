@@ -16,20 +16,23 @@
     const inpConfirmPass = document.querySelector('.confirm-pass');
     const invalidUser = document.querySelector('.invalid-user');
 
-    //TODO Show SweetAlert  when sign in & sign up 
-    btnSignUp.addEventListener('click', function(e) {
-      if(inpMail.value != '' && inpName.value != '' && inpPass.value != '' && inpConfirmPass.value != '' && inpConfirmPass.value == inpPass.value ) {
-        Swal.fire({
-            icon: 'success',
-            title: 'Alert!',
-            text: 'Verification code has been sent to your email. Please verify your email to continue logging in!',
-            showConfirmButton: false
-        })
-        setTimeout(function() {
-            signUp.submit();
-        }, 3000);
-      }
-    })
+    // const verifyEmail = document.querySelector('#verify-email');
+    // const errorPass = document.querySelector('#error-passerror-pass');
+    // const invalid_user = document.querySelector('.invalid-user');
+    // //TODO Show SweetAlert  when sign in & sign up 
+    // btnSignUp.addEventListener('click', function() {
+    //   if(inpMail.value != '' && inpName.value != '' && inpPass.value != '' && inpConfirmPass.value != '' && inpConfirmPass.value == inpPass.value) {
+    //       Swal.fire({
+    //         icon: 'success',
+    //         title: 'Alert!',
+    //         text: 'Verification code has been sent to your email. Please verify your email to continue logging in!',
+    //         showConfirmButton: false
+    //       })
+    //       setTimeout(function() {
+    //         signUp.submit();
+    //       }, 3000);
+    //   }
+    // })
 
     signUpBtn.onclick = function() {
       formSignIn.classList.remove('show')

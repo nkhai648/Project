@@ -205,7 +205,7 @@
                 if(in_array($getNameType, $arrType)) {
                     if($fileError == 0) {
                         if($fileSize <= 3000000) {
-                            $target = 'public/img/'.basename($fileName);
+                            $target = 'public/upload/'.basename($fileName);
                             move_uploaded_file($fileTmp, $target);
                         }else {
                             echo 'File is so big!';

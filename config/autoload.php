@@ -7,7 +7,7 @@ defined('APPPATH') OR exit('Không có quyền truy cập phần này!');
 * Autoload Libraries
 * ------------------------------------------------------------------
 */
-$autoload['lib'] = array();
+$autoload['lib'] = array('verify_email', 'mail');
 /*
 * ------------------------------------------------------------------
 * Autoload Helper

@@ -12,10 +12,10 @@ require CONFIGPATH . DIRECTORY_SEPARATOR . 'config.php';
 
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'autoload.php';
 
+require CONFIGPATH . DIRECTORY_SEPARATOR . 'email.php';
+
 //FOLDER CORE DATBASE
 require LIBPATH . DIRECTORY_SEPARATOR . 'database.php';
-
-require LIBPATH . DIRECTORY_SEPARATOR . 'mail.php';
 
 require COREPATH . DIRECTORY_SEPARATOR . 'base.php';
 /*
@@ -48,6 +48,8 @@ if(is_array($autoload)) {
 
 
 db_connect($db);
+
+new objMailer($email);
 
 require COREPATH . DIRECTORY_SEPARATOR . 'router.php';
 ?>

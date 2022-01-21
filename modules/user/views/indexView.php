@@ -96,11 +96,11 @@
           </div>
 
           <div class="message-box">
-            <p><?=isset($error_pass) ? $error_pass : ''?></p>
-            <p class="invalid-user"><?=isset($invalid_user) ? $invalid_user : ''?></p>
-          </div>
-          <div class="forgot-link">
-            <a href="#">Forgot password?</a>
+            <p id="error-pass"><?=isset($error_pass) ? $error_pass : ''?></p>
+            <p id="verify-email"><?=isset($verify_email) ? $verify_email : ''?></p>
+            <?php if(isset($invalid_user)) { ?>
+              <p class="invalid-user"><?=isset($invalid_user) ? $invalid_user : ''?></p>
+            <?php }?>
           </div>
           
           <input type="submit" value="Sign up" name="sign-up" class="submit-btn" id="btn-signup">

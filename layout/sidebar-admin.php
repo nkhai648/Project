@@ -7,10 +7,11 @@
         <link rel="shortcut icon" href="../public/img/logo.png" type="image/x-icon">
         
         <!-- BOX ICONS CSS-->
-        <link href='../libraries/boxicon/css/boxicons.min.css' rel='stylesheet'>
+        <link href='../public/boxicon/css/boxicons.min.css' rel='stylesheet'>
         
         <!-- CSS BOOTSTRAP -->
-        <link rel="stylesheet" href="../libraries/Bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../public/Bootstrap/css/bootstrap.min.css">
+
 
         <!--========== SWEETALERT ==========-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.5/sweetalert2.css" integrity="sha512-fSWkjL6trYj6KvdwIga30e8V4h9dgeLxTF2q2waiwwafEXD+GXo5LmPw7jmrSDqRun9gW5KBR+DjvWD+5TVr8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />

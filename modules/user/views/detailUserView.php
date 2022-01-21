@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('pay'); ?>
  <main class="bd-container section" id="user-profile">
     <div class="main-profile">
         <h2>Profile User</h2>

@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="shortcut icon" href="../public/img/home.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../public/img/logo.png" type="image/x-icon">
 
     <!--========== BOX ICONS ==========-->
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href='../public/boxicon/css/boxicons.min.css' rel='stylesheet'>
+
 
     <!-- CSS BOOTSTRAP -->
-    <link rel="stylesheet" href="../libraries/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/Bootstrap/css/bootstrap.min.css">
+
 
     <!--========== SWEETALERT ==========-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.5/sweetalert2.css" integrity="sha512-fSWkjL6trYj6KvdwIga30e8V4h9dgeLxTF2q2waiwwafEXD+GXo5LmPw7jmrSDqRun9gW5KBR+DjvWD+5TVr8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -34,6 +36,33 @@
             <a href="?mod=home&action=index" class="nav__logo">
                 <img src="../public/img/logo.png" alt="">
             </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="?mod=home&#home" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="?mod=home&#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="?mod=home&#services" class="nav__link">Services</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="?mod=home&#menu" class="nav__link">Menu</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="?mod=products&action=index" class="nav__link">Products</a>
+                    </li>
+                    <li >
+                        <i class='bx bx-moon change-theme' id="theme-button"></i>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
 
             <div class="cart-user">
                 <div class="user-box">

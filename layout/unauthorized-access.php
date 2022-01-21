@@ -22,10 +22,11 @@
         width: 450px;
     }
     .main h3 {
-        font-size: 23px;
+        font-size: 21px;
+        text-align: center;
         font-family: 'Arial', sans-serif;
+        font-weight: 500;
     }
-    
 
 </style>
 <body>

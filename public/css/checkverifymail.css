@@ -46,3 +46,25 @@ body {
 .container h2 a {
     color: blue;
 }
+
+.btn-sended {
+  display: inline-block; 
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  padding: .4rem .7rem;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #00bea2;
+  transition: .3s;
+  cursor: pointer;
+}
+.btn-sended i {
+  font-size: 19px;
+}
+.btn-sended:hover {
+  background-color: #12a38d;
+  color : white;
+}
