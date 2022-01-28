@@ -46,7 +46,7 @@
                 <span><?=$get_user['created_at']?>.</span>
             </div>
             <input type="text" hidden name="id_user" value="<?=$get_user['id_user']?>">
-            <button class="btn" id="btn-profile" name="update" type="submit">Lưu hồ sơ</button>
+            <button class="btn" id="btn-profile" name="update" type="submit">Save profile</button>
         </form>
     </div>
  </main>

@@ -168,7 +168,7 @@ if (btnAtCart) {
 				title: 'Alert!',
 				text: 'You are not logged in, so you do not have permission to add products. Please login...',
 				showCancelButton: true,
-				confirmButtonText: 'Đăng nhập',
+				confirmButtonText: 'Login',
 				confirmButtonColor: '#00c567',
 			}).then((result) => {
 				if (result.isConfirmed) {

@@ -89,7 +89,7 @@
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     transition: .2s;
-    /* width: 188px; */
+    /* width: 196px; */
     background-color: var(--body-color) !important;
 }
 .card-body {
@@ -641,12 +641,19 @@
 @media screen and (min-width: 960px) {
     .list-products {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+
     }
     .table tbody tr td a {
         font-size: 18px;
     }
     .table tbody tr td {
         font-size: 17px;
+    }
+    .search-null {
+        display: block;
+    }
+    .search-null .img-search-null {
+        width: 400px;
     }
 }

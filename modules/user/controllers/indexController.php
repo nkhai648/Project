@@ -77,7 +77,10 @@
                         
                         $mailContent = [
                             'subject' => 'Tasty Food',
-                            'body' => "<a href='http://localhost:5000/?mod=user&action=login&token={$data['token']}'>Click here</a>",
+                            'body' => "
+                            Xin chào bạn! Rất vui khi được bạn tin tưởng và sự dụng dịch vụ của chúng tôi. Việc đăng ký đã thành công. Bạn cần xác thực email để chúng tôi biết bạn tồn tại...
+                            <a href='http://localhost:5000/?mod=user&action=login&token={$data['token']}'>Nhấn vào đây</a> để thực hiện xác thực. Xin cảm ơn <3
+                            ",
                             'altbody' => 'Hello guy!'
                         ];
 
